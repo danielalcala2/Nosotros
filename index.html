@@ -142,11 +142,16 @@
     <div class="container" id="valentine-section" style="display: none;">
         <h1>¿Quieres ser mi San Valentín? 💖</h1>
         <div class="buttons">
-            <button class="yes" onclick="alert('¡Sabía que dirías que sí! 💕')">Sí</button>
+            <button class="yes" onclick="redirectToLocation()">Sí</button>
             <button class="no" onclick="alert('No es una opción 😜')">No</button>
         </div>
     </div>
     <script>
+        function redirectToLocation() {
+        alert("Vamos a Tepoztlán el día 15 de febrero a celebrar nuestros 2 meses y el 14 💖");
+        window.location.href = "https://www.google.com.mx/maps/place/Tepoztl%C3%A1n,+Mor./@18.9869121,-99.1031864,5965m/data=!3m2!1e3!4b1!4m6!3m5!1s0x85ce0b61dd582b75:0x400d7f380728b20!8m2!3d18.9848015!4d-99.0930528!16zL20vMDM2a3pj?entry=ttu&g_ep=EgoyMDI1MDEyOC4wIKXMDSoASAFQAw%3D%3D";
+        }
+
         function showValentineSection() {
             document.querySelector('.history').style.display = 'none';
             document.getElementById('valentine-section').style.display = 'block';
