@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 182, 193, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ff1493;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 5px;
+        }
+        .yes {
+            background-color: #ff69b4;
+            color: white;
+        }
+        .no {
+            background-color: #f8a5c2;
+            color: white;
+        }
+        .history {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            text-align: center;
+        }
+        .carousel {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 250px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .description {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        .tulip {
+            position: absolute;
+            width: 50px;
+            animation: floatUp 5s linear infinite;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-10vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="history">
+        <h2>Nuestra Historia</h2>
+        <p>Aquí empieza nuestra historia, desde aquel 13 de diciembre hasta el hoy en dia.
+            Sabes que no soy muy bueno escribiendo ni expresandome pero queria hacerlo de una forma un poco a mi manera jsjs. 
+            Desde aquel 13 de diciembre cuando nos dirigiamos hacia la CDMX iba muy nervioso por saber cual seria esa respuesta, pero que crees justo esa noche empezo la historia de mi vida junto a la persona con la que realmente quiero todo
+            y cuando digo todo es todo.</p>
+        <div class="carousel">
+            <div class="card">
+                <img src="Novios.JPEG" alt="Una pregunta una respuesta 13-12-2024">
+                <p class="description">13-12-2024 ¿Puedo ser tu novio?</p>
+            </div>
+            <div class="card">
+                <img src="IMG_3953.JPEG" alt="Para que un museo 14-12-2024">
+                <p class="description">14-12-2024 La obra de arte más linda del mundo</p>
+            </div>
+            
+            <div class="card">
+                <img src="IMG_4100 (1).JPEG" alt="Segunda pregunta 22-12-2024">
+                <p class="description">22-12-2024 Una reafirmación</p>
+            </div>
+            <div class="card">
+                <img src="IMG_4254.JPEG" alt="Un desayuno">
+                <p class="description">27-12-2024 Primer desayuno juntos</p>
+            </div>
+            <div class="card">
+                <img src="IMG_4327.JPEG" alt="¿Pueblos mágicos?">
+                <p class="description">05-01-2025 Pueblos magicos si son a tu lado</p>
+            </div>
+            <div class="card">
+                <img src="IMG_4442.JPEG" alt="Aventuras">
+                <p class="description">12-01-2025 Aventuras juntos </p>
+            </div>
+            <div class="card">
+                <img src="IMG_4491.JPEG" alt="Primer mes">
+                <p class="description">13-01-2025 Gracias por permitirme estar contigo</p>
+            </div>
+            <div class="card">
+                <img src="IMG_4559.JPEG" alt="100 citas a tu lado">
+                <p class="description">17-01-2025 Plasmemos nuestras citas</p>
+            </div>
+        </div>
+        <br>
+        <button onclick="showValentineSection()">Siguiente</button>
+    </div>
+    <div class="container" id="valentine-section" style="display: none;">
+        <h1>¿Quieres ser mi San Valentín? 💖</h1>
+        <div class="buttons">
+            <button class="yes" onclick="alert('¡Sabía que dirías que sí! 💕')">Sí</button>
+            <button class="no" onclick="alert('No es una opción 😜')">No</button>
+        </div>
+    </div>
+    <script>
+        function showValentineSection() {
+            document.querySelector('.history').style.display = 'none';
+            document.getElementById('valentine-section').style.display = 'block';
+        }
+
+        function createTulip() {
+            const tulip = document.createElement('img');
+            tulip.src = 'https://jooinn.com/images/pink-tulip-24.png';
+            tulip.className = 'tulip';
+            tulip.style.left = Math.random() * window.innerWidth + 'px';
+            tulip.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            document.body.appendChild(tulip);
+            setTimeout(() => tulip.remove(), 5000);
+        }
+        setInterval(createTulip, 800);
+    </script>
+</body>
+</html>
